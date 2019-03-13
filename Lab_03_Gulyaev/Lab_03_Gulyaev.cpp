@@ -35,7 +35,7 @@ int main()
 
 
 	for (int i = 1; i < M; i++) { //цикл поиска 
-		if (a[i] > max1) {
+		if (a[i] >max1) {
 
 			max2 = max1;
 			max1 = a[i];
@@ -43,7 +43,7 @@ int main()
 		}
 	}
 
-	if (max2 = 1001) {
+	if (max2 == 1001) {
 		error_printf("No solution");
 		return 0;
 	}
