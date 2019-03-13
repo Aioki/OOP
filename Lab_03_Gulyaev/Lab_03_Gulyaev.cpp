@@ -8,6 +8,7 @@
 int main()
 {
 	int a[20];
+	int x;
 
 }
 
