@@ -1,5 +1,6 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+﻿
 #include "pch.h"
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "testing.h"
 
@@ -7,7 +8,7 @@ int main()
 {
 	int a[20]; // Заданный массив
 	int M; //Максимальный размер массива
-	int max1, max2 = 1001; //Максимальное и предмаксимальное значение 
+	int max1, max2 = -1001; //Максимальное и предмаксимальное значение 
 
 
 	input_printf("input the size of the array ");
@@ -18,7 +19,7 @@ int main()
 		return 0;
 	}
 
-	printf("input elements of the array A ");
+	input_printf("input elements of the array A\n");
 	for (int i = 0; i < M; i++) //цикл ввода массива
 	{
 		scanf("%d", &a[i]); //чтение элементов массива
@@ -39,10 +40,13 @@ int main()
 			max1 = a[i];
 
 		}
+		if (a[i]< max1 && a[i]>max2) {
+			max2 = a[i];
+		}
 	}
 
-	if (max2 == 1001) { //Проверка на поиск второго наибольшего элемента, если переменная не изменилось - такого числа нет.
-		error_printf("No solution");
+	if (max2 == -1001 || max1 == max2) { //Проверка на поиск второго наибольшего элемента, если переменная не изменилось - такого числа нет.
+		printf("no solution");
 		return 0;
 	}
 	else {
